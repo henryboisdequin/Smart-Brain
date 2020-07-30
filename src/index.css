@@ -1,0 +1,11 @@
+button {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Fjalla One", sans-serif;
+  font-style: bold;
+  background: linear-gradient(to left, rgb(0, 255, 191), rgb(255, 0, 247));
+}
