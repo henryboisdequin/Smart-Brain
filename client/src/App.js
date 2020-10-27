@@ -1,17 +1,17 @@
 import Clarifai from "clarifai";
-import React from "react";
+import React, { useState } from "react";
 import Particles from "react-particles-js";
 import "./App.css";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
-import Logo from "./components/Logo/Logo.js"; // bug, have to use .js
+import Logo from "./components/Logo/Logo.js";
 import Navigation from "./components/Navigation/Navigation";
 import Rank from "./components/Rank/Rank";
 import Register from "./components/Register/Register";
 import Signin from "./components/Signin/Signin";
 
 const app = new Clarifai.App({
-  apiKey: "8652cef3eaa74dd786ee1c95062332c4",
+  apiKey: process.env.API_KEY,
 });
 
 const particleOptions = {
