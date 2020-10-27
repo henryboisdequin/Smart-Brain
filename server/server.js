@@ -38,8 +38,8 @@ app.use(cors());
 */
 
 // Root
-app.get("/", (req, res) => {
-  res.send("Its working");
+app.get("/", (_, res) => {
+  res.send("Server is up and running!");
 });
 
 // Sign in
@@ -95,7 +95,7 @@ app.post("/register", (req, res) => {
       })
       .then(trx.commit)
       .catch(trx.rollback);
-  }).catch((err) => res.status(400).json("Unable to register " + err));
+  }).catch((err) => res.status(400).json(`Unable to register: ${err}.`));
 });
 
 // Profile & Profile Id
@@ -126,11 +126,11 @@ app.put("/image", (req, res) => {
     .then((entries) => {
       res.json(entries[0]);
     })
-    .catch((err) => res.status(400).json("Error: " + err));
+    .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
 const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
-  console.log("Working " + PORT);
+  console.log(`App is running on localhost:${PORT}`);
 });
