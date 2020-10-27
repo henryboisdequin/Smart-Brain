@@ -90,7 +90,7 @@ function App() {
       })
       .then((res) => res.json())
       .then((count) => {
-        this.setState(Object.assign(this.state.user, { entries: count }));
+        setUser({ ...fields, entries: count });
       })
       .catch(console.log);
   };
